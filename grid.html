@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grids</title>
+    <style>
+      .container {
+        background-color: white;
+      }
+      .grid-container1 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: auto auto;
+        border-color: blueviolet;
+        border-style: solid;
+      }
+      .grid-container2 {
+        display: grid;
+        grid-template-columns: 100px auto 100px;
+        grid-template-rows: 100px 100px;
+        border-color: aqua;
+        border-style: solid;
+      }
+      .grid-container3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(1px, 300px));
+        grid-template-rows: 100px 100px;
+        border-color: yellow;
+        border-style: solid;
+        text-align: center;
+      }
+      .grid-container4 {
+        display: grid;
+        grid-gap: 60px 60px;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        border-color: purple;
+        border-style: solid;
+        grid-gap: 6px;
+        justify-content: space-evenly;
+      }
+
+      .grid-container5 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        border-color: green;
+        border-style: solid;
+      }
+
+      .grid-container6 {
+        display: grid;
+        grid-template-columns: minmax(50px, 200px) minmax(50px, 200px) minmax(
+            50px,
+            200px
+          );
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      .grid-container7 {
+        display: grid;
+        grid-template-columns: fit-content(300px) fit-content(300px) fit-content(
+            300px
+          );
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      .grid-container8 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+
+        }
+        .grid-container8 > #place-me {
+            place-self:  center stretch;
+            border-style: dashed;
+            border-color: black;
+
+        }
+
+      .grid-container8 > #span {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        border-style: dashed;
+        border-color: black;
+      }
+
+      #item {
+        border-style: dashed;
+        border-color: black;
+
+      }
+
+      
+
+      .grid-container9 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+
+      }
+
+      .grid-container9 > #toplace{
+        border-style: dashed;
+        border-color: black;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      .grid-container10{
+        display: grid;
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      .grid-container11 {
+        display: grid;
+        border-style: solid;
+        border-color: black;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px;
+      }
+
+      #three {
+        align-self: center;
+        justify-self: flex-end;
+        border-style: dashed;
+        border-color: green;
+      }
+
+      #two {
+        align-self: flex-end;
+        justify-self: flex-start;
+        border-style: dashed;
+        border-color: green;
+      }
+
+      #one {
+        align-self: flex-start;
+        justify-content: center;
+        border-style: dashed;
+        border-color: green;
+      }
+
+      #a{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        border-style: dashed;
+        border-color: black;
+      }
+
+      #b{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        border-style: dashed;
+        border-color: black;
+
+      }
+
+      #c{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        border-style: dashed;
+        border-color: black;
+      }
+      #d{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        border-style: dashed;
+        border-color: black;
+      }
+
+      .grid-container12 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      #four {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        border-color: blue;
+        border-style: dashed;
+      }
+
+      #five {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        border-color: red;
+        border-style: dashed;
+      }
+
+      #six {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        border-style: dashed;
+        border-color:blueviolet;
+      }
+
+      .grid-container13 {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px;
+        border-style: solid;
+        border-color: black;
+      }
+
+      #red {
+        place-self: center stretch;
+        border-style: dashed;
+        border-color:blueviolet
+
+      }
+
+      #blue {
+        place-self: flex-end;
+        border-style: dashed;
+        border-color:blueviolet;
+
+      }
+
+      #green {
+        place-self: flex-start stretch;
+        border-style: dashed;
+        border-color:blueviolet;
+      }
+
+      #purple {
+        place-self: center;
+        border-style: dashed;
+        border-color:blueviolet;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid-container1">
+        <!--Fixed Width Grid-->
+        <div id="item">1</div>
+        <div id="item">2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br />
+
+      <div class="grid-container2">
+        <!--Relative Width Column-->
+        <div id="item">1</div>
+        <div id="item" >2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br />
+
+      <div class="grid-container3">
+        <!--Fractional Widths-->
+        <div id="item" >1/4</div>
+        <div id="item">2/4</div>
+        <div id="item">1/4</div>
+        <div id="item" >4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br />
+
+      <div class="grid-container4">
+        <!--Grid Gap-->
+        <div id="item">1</div>
+        <div id="item">2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br />
+
+      <div class="grid-container5">
+        <!--Implicit Grid Creation and Sizing-->
+        <div id="item">1</div>
+        <div id="item">2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+        <div id="item">Extra content</div>
+        <div id="item">More extra content</div>
+      </div>
+      <br />
+
+      <div class="grid-container6">
+        <!--Sizing With Boundaries-->
+        <div id="item">1</div>
+        <div id="item">2</div>
+        <div id="item">3</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br />
+
+      <div class="grid-container7">
+        <!--Sizing to Content-->
+        <div id="item">I am a long string of content.</div>
+        <div id="item">Less content here.</div>
+        <div id="item">Tiny</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      </div>
+      <br/>
+      <div class="grid-container8">
+        <!--Placing and Spanning-->
+        <div id="place-me">This in formation has been placed.</div>
+        <div id="span">I was put here using span.</div>
+        <div id="item">I am more content.</div>
+        <div id="item">4</div>
+        <div id="item">5</div>
+        <div id="item">6</div>
+      </div>
+      <br/>
+
+      <div class="grid-container9">
+        <!--Grid Lines-->
+        <div id="item">1</div>
+       <div id="item">2</div> 
+       <div id="toplace">3 I will touch the 2nd and 3rd rows and the 1st and 2nd columns.</div>
+       <div id="item">4</div>
+       <div id="item">5</div>
+       <div id="item">6</div>
+
+    
+      </div>
+      <br/>
+
+      <div class="grid-container10">
+        <!--Grid Areas-->
+        <div id="a">A</div>
+        <div id="b">B</div>
+        <div id="c">C</div>
+        <div id="d">D</div>
+      </div>
+      <br/>
+
+      <div class="grid-container11">
+        <!--Item Alignment-->
+        <div id="three">3</div>
+        <div id="two">2</div>
+        <div id="one">1</div>
+      </div>
+      <br/>
+
+      <div class="grid-container12">
+        <!--Stacking-->
+        <div id="four">Number four</div>
+        <div id="five">Numer five</div>
+        <div id="six">Number six</div>
+      </div>
+      <br/>
+
+      <div class="grid-container13">
+        <!--Item control-->
+        <div id="red">red</div>
+        <div id="blue">blue</div>
+        <div id="green">green</div>
+        <div id="purple">purple</div>
+
+
+      </div>
+
+
+
+    </div>
+  </body>
+</html>
